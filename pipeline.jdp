@@ -14,12 +14,12 @@ pipeline {
         }
         stage('Test'){
             steps {
-                echo 'Test Successful abhishek '
+                echo 'Test Successful'
             }
         }
         stage('Deploy'){
             steps {
-                echo 'Deploy Successful abhi '
+                echo 'Deploy Successful'
             }
         }
     }
