@@ -1,1 +1,27 @@
-
+pipeline {
+    agent any
+    stages {
+        stage('Pull'){
+            steps {
+                git branch: 'main', credentialsId: 'secret-id-1', url: 'https://github.com/ABHICLOUDS/student-ui.git'
+                sh 'ls'
+                sh 'mvn -v'
+            }
+        }
+        stage('Build'){
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Test'){
+            steps {
+                echo 'Test Successful'
+            }
+        }
+        stage('Deploy'){
+            steps {
+                echo 'Deploy Successful'
+            }
+        }
+    }
+}
