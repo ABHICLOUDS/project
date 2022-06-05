@@ -15,7 +15,9 @@ pipeline {
         }
         stage('Test'){
             steps {
-                echo 'Test Successful'
+                 withSonarQubeEnv('sonar') {
+                     sh 'mvn sonar:sonar'
+                }
             }
         }
         stage('Deploy'){
