@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Pull'){
             steps {
-                git branch: 'main', credentialsId: 'secret-id-1', url: 'https://github.com/ABHICLOUDS/student-ui.git'
+                git branch: 'J2EE', url: 'https://github.com/shashirajraja/onlinebookstore.git'
                 sh 'ls'
                 sh 'mvn -v'
             }
