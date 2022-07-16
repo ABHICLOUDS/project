@@ -1,1 +1,13 @@
-
+pipoeline{
+agent {
+           node("node-1")
+       }     
+               stages {          
+                       stage ("Git-checkoutl") { 
+    steps    {
+                   git branch: 'J2EE', url: 'https://github.com/ABHICLOUDS/onlinebookstore.git'
+                   sh '''ls
+'''
+             }
+    }
+}
