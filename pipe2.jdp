@@ -19,8 +19,8 @@ agent {
 }
         stage('Deploy'){
             steps {
-               deploy adapters: [tomcat9(credentialsId: '352a4a88-399b-49e8-88cf-77a0777714f8', path: '', url: 'http://18.168.151.238:8080/')], contextPath: '/', war: '**/*.war'
-            }
+               deploy adapters: [tomcat9(credentialsId: '1df21577-5c8f-4f1a-85bd-7220fb172e72', path: '', url: 'http://18.168.151.238:8080/')], contextPath: '/', onFailure: false, war: '**/*.war'
+               }
         }
 
     }
