@@ -1,4 +1,4 @@
-pipoeline{
+pipeline{
 agent {
            node("node-1")
        }     
