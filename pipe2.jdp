@@ -5,7 +5,7 @@ agent {
                stages {          
                        stage ("Git-checkoutl") { 
     steps    {
-                   git branch: 'J2EE', url: 'https://github.com/ABHICLOUDS/onlinebookstore.git'
+                  git branch: 'main', url: 'https://github.com/ABHICLOUDS/student-ui.git'
                    sh '''ls
 '''
              }
