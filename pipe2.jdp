@@ -25,3 +25,19 @@ agent {
 
     }
 }
+
+
+pipeline {
+       agent any
+  //  environment {
+  //      registry = "account_id.dkr.ecr.us-east-2.amazonaws.com/my-docker-repo" //url of ecr repo
+  //  }
+   
+    stages {
+        stage('Cloning Git') {
+            steps {
+                git branch: 'main', url: 'https://github.com/ABHICLOUDS/realtime_project_springboot-app.git'
+                sh 'ls'
+            }
+        }
+   }     
