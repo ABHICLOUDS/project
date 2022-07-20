@@ -33,6 +33,14 @@ pipeline {
          } // (get push cmd from ecr repo)
         }
       }
-
+stage('K8S Deploy') {
+        steps{   
+            script {
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'k8-con', namespace: '', serverUrl: '') {
+                sh ('kubectl apply -f  eks-deploy-k8s.yaml')
+                }
+            }
+        }
+       }
    }
 }
