@@ -25,6 +25,14 @@ pipeline {
         }//(jenkin-cli->docker images their will seecreated docker images)
       }
     }
-   
+   stage('Pushing to ECR') {
+     steps{  
+         script {
+                sh 'aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/w8d3u4i2'
+                sh 'docker push public.ecr.aws/w8d3u4i2/my-repo:latest'
+         } // (get push cmd from ecr repo)
+        }
+      }
+
    }
 }
