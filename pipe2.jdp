@@ -1,8 +1,8 @@
 pipeline {
        agent any
-  //  environment {
-  //      registry = "account_id.dkr.ecr.us-east-2.amazonaws.com/my-docker-repo" //url of ecr repo
-  //  }
+   environment {
+        registry = "public.ecr.aws/w8d3u4i2/my-repo" 
+    }
    
     stages {
         stage('Cloning Git') {
@@ -17,5 +17,14 @@ pipeline {
             sh 'mvn clean package'           
             }
       }
+      stage('Building image') {
+      steps{
+        script {
+          docker.build registry
+         //dockerImage = docker.build registry 
+        }//(jenkin-cli->docker images their will seecreated docker images)
+      }
+    }
+   
    }
 }
