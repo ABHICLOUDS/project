@@ -4,7 +4,9 @@ pipeline {
         stage('Pull'){
             steps {
                 
-                git 'https://github.com/ABHICLOUDS/terraform-code.git'
+                sh 'git --version'
+                sh 'terraform --version'
+                git branch: 'main', url: 'https://github.com/ABHICLOUDS/terraform-code.git'
                 sh 'ls'
             }
         }
